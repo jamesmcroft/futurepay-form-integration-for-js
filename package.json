@@ -1,0 +1,58 @@
+{
+    "name": "futurepay-form-integration-js",
+    "version": "1.0.0",
+    "main": "./index.js",
+    "typings": "./index.d.ts",
+    "scripts": {
+        "build": "npm test && tsc",
+        "dist": "copy /Y package.json dist && copy /Y README.md dist",
+        "test": "jest --passWithNoTests --collectCoverage"
+    },
+    "files": [
+        "*"
+    ],
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "moduleFileExtensions": [
+            "ts",
+            "js"
+        ],
+        "testEnvironment": "jsdom",
+        "testRegex": "^.+\\.spec\\.ts$",
+        "coverageReporters": [
+            "json",
+            "lcov",
+            "text",
+            "clover",
+            "cobertura"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamesmcroft/futurepay-form-integration-for-js.git"
+    },
+    "keywords": [
+        "FuturePay",
+        "Worldpay",
+        "Form Integration",
+        "Recurring Payments"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jamesmcroft/futurepay-form-integration-for-js/issues"
+    },
+    "homepage": "https://github.com/jamesmcroft/futurepay-form-integration-for-js",
+    "dependencies": {
+        "made-data-validation": "^0.1.0-alpha.16"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.0.2",
+        "@types/jest": "^29.5.4",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "ts-jest": "^29.1.1",
+        "typescript": "^5.2.2"
+    }
+}
