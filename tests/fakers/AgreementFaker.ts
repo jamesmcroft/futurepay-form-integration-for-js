@@ -20,6 +20,7 @@ export const regularAgreement = (): RegularAgreement => {
         option: RegularAgreementOption.Default,
         cartId: faker.finance.accountNumber(),
         desc: faker.lorem.sentence(),
+        testMode: 100,
     } as RegularAgreement;
 };
 
@@ -37,5 +38,6 @@ export const limitedAgreement = (): LimitedAgreement => {
         currency: CurrencyCode.GBP,
         cartId: faker.finance.accountNumber(),
         desc: faker.lorem.sentence(),
+        testMode: 100,
     } as LimitedAgreement;
 }

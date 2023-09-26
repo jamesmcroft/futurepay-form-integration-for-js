@@ -1,6 +1,7 @@
 import { CurrencyCode } from "./CurrencyCode";
 import { FuturePayType } from "./FuturePayType";
 import { AgreementMap } from "./AgreementMap";
+import { TestMode } from "./TestMode";
 
 export interface Agreement extends AgreementMap {
     /**
@@ -33,5 +34,8 @@ export interface Agreement extends AgreementMap {
      **/
     desc: string;
 
-    testMode: number;
+    /**
+     * Determines whether to initiate the payment in test or live modes.
+     **/
+    testMode: TestMode;
 }

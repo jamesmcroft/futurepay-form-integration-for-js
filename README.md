@@ -11,7 +11,7 @@ The FuturePay (Worldpay) Form Integration Library for JavaScript is a library th
 ## Install
 
 ```sh
-npm install futurepay-form-integration-for-js
+npm install futurepay-form-integration-js
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ npm install futurepay-form-integration-for-js
 ### Initiating a recurring payment agreement
 
 ```js
-import { FuturePayService, FuturePayType, CurrencyCode, DelayUnit, RegularAgreement, RegularAgreementOption } from 'futurepay-form-integration-for-js';
+import { FuturePayService, FuturePayType, CurrencyCode, DelayUnit, RegularAgreement, RegularAgreementOption } from 'futurepay-form-integration-js';
 
 var service = new FuturePayService();
 

@@ -8,3 +8,4 @@ export * from './LimitedAgreement';
 export * from './LimitedAgreementOption';
 export * from './RegularAgreement';
 export * from './RegularAgreementOption';
+export * from './TestMode';
