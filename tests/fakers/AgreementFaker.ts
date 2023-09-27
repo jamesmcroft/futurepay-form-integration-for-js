@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { CancelAgreement } from '../../src/CancelAgreement';
 import { LimitedAgreement } from '../../src/LimitedAgreement';
 import { LimitedAgreementOption } from '../../src/LimitedAgreementOption';
 import { RegularAgreement } from "../../src/RegularAgreement";
@@ -40,4 +41,12 @@ export const limitedAgreement = (): LimitedAgreement => {
         desc: faker.lorem.sentence(),
         testMode: 100,
     } as LimitedAgreement;
+}
+
+export const cancelAgreement = (): CancelAgreement => {
+    return {
+        futurePayId: faker.string.uuid(),
+        instId: faker.string.uuid(),
+        authPW: faker.string.alphanumeric(10)
+    } as CancelAgreement;
 }

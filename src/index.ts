@@ -1,5 +1,6 @@
 export * from './Agreement';
 export * from './AgreementMap';
+export * from './CancelAgreement';
 export * from './CurrencyCode';
 export * from './DelayUnit';
 export * from './FuturePayService';

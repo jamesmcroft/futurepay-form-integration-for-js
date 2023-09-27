@@ -9,7 +9,7 @@
         "test": "jest --passWithNoTests --collectCoverage"
     },
     "files": [
-        "*"
+        "src/**/*"
     ],
     "jest": {
         "transform": {
