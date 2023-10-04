@@ -37,7 +37,9 @@ describe("when initiating an agreement", () => {
         var agreement = regularAgreement();
 
         // Act
-        var formInputsHtml = await futurePayService.initiateAgreement(agreement, "https://www.example.com");
+        var formInputsHtml = await futurePayService.initiateAgreement(agreement, {
+            callbackUrl: "https://www.example.com", additionalProperties: null, openInNewTab: false
+        });
 
         // Assert
         expect(formInputsHtml).not.toBeNull();
@@ -51,7 +53,9 @@ describe("when initiating an agreement", () => {
         var agreement = regularAgreement();
 
         // Act
-        var formInputsHtml = await futurePayService.initiateAgreement(agreement, null, { C_test: "C", M_test: "M", MC_test: "MC", CM_test: "CM" });
+        var formInputsHtml = await futurePayService.initiateAgreement(agreement, {
+            callbackUrl: null, additionalProperties: { C_test: "C", M_test: "M", MC_test: "MC", CM_test: "CM" }, openInNewTab: false
+        });
 
         // Assert
         expect(formInputsHtml).not.toBeNull();
@@ -68,7 +72,9 @@ describe("when initiating an agreement", () => {
         var agreement = regularAgreement();
 
         // Act
-        var formInputsHtml = await futurePayService.initiateAgreement(agreement, null, { VAR_test: "test" });
+        var formInputsHtml = await futurePayService.initiateAgreement(agreement, {
+            callbackUrl: null, additionalProperties: { VAR_test: "test" }, openInNewTab: false
+        });
 
         // Assert
         expect(formInputsHtml).not.toBeNull();
@@ -102,7 +108,9 @@ describe("when cancelling an agreement", () => {
         var agreement = cancelAgreement();
 
         // Act
-        var formInputsHtml = await futurePayService.cancelAgreement(agreement, "https://www.example.com");
+        var formInputsHtml = await futurePayService.cancelAgreement(agreement, {
+            callbackUrl: "https://www.example.com", additionalProperties: null, openInNewTab: false
+        });
 
         // Assert
         expect(formInputsHtml).not.toBeNull();
@@ -116,7 +124,9 @@ describe("when cancelling an agreement", () => {
         var agreement = cancelAgreement();
 
         // Act
-        var formInputsHtml = await futurePayService.cancelAgreement(agreement, null, { C_test: "C", M_test: "M", MC_test: "MC", CM_test: "CM" });
+        var formInputsHtml = await futurePayService.cancelAgreement(agreement, {
+            callbackUrl: null, additionalProperties: { C_test: "C", M_test: "M", MC_test: "MC", CM_test: "CM" }, openInNewTab: false
+        });
 
         // Assert
         expect(formInputsHtml).not.toBeNull();
@@ -133,7 +143,9 @@ describe("when cancelling an agreement", () => {
         var agreement = cancelAgreement();
 
         // Act
-        var formInputsHtml = await futurePayService.cancelAgreement(agreement, null, { VAR_test: "test" });
+        var formInputsHtml = await futurePayService.cancelAgreement(agreement, {
+            callbackUrl: null, additionalProperties: { VAR_test: "test" }, openInNewTab: false
+        });
 
         // Assert
         expect(formInputsHtml).not.toBeNull();
