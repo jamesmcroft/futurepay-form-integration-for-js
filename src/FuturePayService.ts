@@ -1,6 +1,7 @@
 import { Agreement } from "./Agreement";
 import { AgreementMap } from "./AgreementMap";
 import { CancelAgreement } from "./CancelAgreement";
+import FuturePayAgreementConfig from "./FuturePayAgreementConfig";
 
 /**
  * Defines a class used to initiate recurring payments in FuturePay.
@@ -21,11 +22,14 @@ export class FuturePayService {
     /**
      * Initiates a payment in FuturePay.
      * @param agreement The agreement object to construct the form inputs used to initiate the payment in FuturePay.
-     * @param callbackUrl The optional callback URL to be used by FuturePay to notify the payment status.
-     * @param additionalProperties The optional additional properties to be used to construct the form inputs used to initiate the payment in FuturePay.
+     * @param options The configuration options for constructing the agreement cancellation interaction.
      * @returns A promise that resolves to the HTML form inputs used to initiate the payment in FuturePay.
      */
-    initiateAgreement(agreement: Agreement, callbackUrl: string | null = null, additionalProperties: AgreementMap | null = null): Promise<string> {
+    initiateAgreement(agreement: Agreement, options: FuturePayAgreementConfig = {
+        callbackUrl: null,
+        additionalProperties: null,
+        openInNewTab: false
+    }): Promise<string> {
         var formInputsHtml = "";
 
         for (var key in agreement) {
@@ -34,13 +38,14 @@ export class FuturePayService {
             }
         }
 
-        formInputsHtml += this.generateAdditionalPropertiesInputs(additionalProperties);
-        formInputsHtml += this.generateCallbackUrlInput(callbackUrl);
+        formInputsHtml += this.generateAdditionalPropertiesInputs(options.additionalProperties);
+        formInputsHtml += this.generateCallbackUrlInput(options.callbackUrl);
 
         if (document) {
             var form = document.createElement("form");
             form.setAttribute("method", "post");
             form.setAttribute("action", this.purchaseUrl);
+            form.setAttribute("target", options.openInNewTab ? "_blank" : "_self");
             form.innerHTML = formInputsHtml;
             document.body.appendChild(form);
 
@@ -57,11 +62,14 @@ export class FuturePayService {
     /**
      * Cancels an agreement in FuturePay.
      * @param cancelAgreement The cancel agreement object to construct the form inputs used to cancel the agreement in FuturePay.
-     * @param callbackUrl The optional callback URL to be used by FuturePay to notify the payment status.
-     * @param additionalProperties The optional additional properties to be used to construct the form inputs used to cancel the agreement in FuturePay.
+     * @param options The configuration options for constructing the agreement cancellation interaction.
      * @returns A promise that resolves to the HTML form inputs used to cancel the agreement in FuturePay.
      */
-    cancelAgreement(cancelAgreement: CancelAgreement, callbackUrl: string | null = null, additionalProperties: AgreementMap | null = null): Promise<string> {
+    cancelAgreement(cancelAgreement: CancelAgreement, options: FuturePayAgreementConfig = {
+        callbackUrl: null,
+        additionalProperties: null,
+        openInNewTab: false
+    }): Promise<string> {
         var formInputsHtml = "";
 
         for (var key in cancelAgreement) {
@@ -72,13 +80,14 @@ export class FuturePayService {
 
         formInputsHtml += `<input type='hidden' name='op-cancelFP'></input>`
 
-        formInputsHtml += this.generateAdditionalPropertiesInputs(additionalProperties);
-        formInputsHtml += this.generateCallbackUrlInput(callbackUrl);
+        formInputsHtml += this.generateAdditionalPropertiesInputs(options.additionalProperties);
+        formInputsHtml += this.generateCallbackUrlInput(options.callbackUrl);
 
         if (document) {
             var form = document.createElement("form");
             form.setAttribute("method", "post");
             form.setAttribute("action", this.adminUrl);
+            form.setAttribute("target", options.openInNewTab ? "_blank" : "_self");
             form.innerHTML = formInputsHtml;
             document.body.appendChild(form);
 

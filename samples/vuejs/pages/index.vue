@@ -16,7 +16,11 @@ const initiateRegularAgreement = () => {
         option: RegularAgreementOption.Default,
         cartId: 'MerchantReference',
         testMode: 100
-    } as RegularAgreement);
+    } as RegularAgreement, {
+        openInNewTab: true,
+        callbackUrl: null,
+        additionalProperties: null
+    });
 };
 
 const cancelAgreement = () => {

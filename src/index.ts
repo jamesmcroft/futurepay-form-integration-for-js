@@ -3,6 +3,7 @@ export * from './AgreementMap';
 export * from './CancelAgreement';
 export * from './CurrencyCode';
 export * from './DelayUnit';
+export * from './FuturePayAgreementConfig';
 export * from './FuturePayService';
 export * from './FuturePayType';
 export * from './LimitedAgreement';
