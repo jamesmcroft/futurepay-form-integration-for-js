@@ -1,10 +1,12 @@
 # FuturePay (Worldpay) Form Integration Library for JavaScript
 
+> [!IMPORTANT]
+> This project is no longer maintained, and has been archived for reference only.
+
 [![GitHub release](https://img.shields.io/github/release/jamesmcroft/futurepay-form-integration-for-js.svg)](https://github.com/jamesmcroft/futurepay-form-integration-for-js/releases)
 [![npm](https://img.shields.io/npm/v/futurepay-form-integration-js.svg)](https://www.npmjs.com/package/futurepay-form-integration-js)
 [![npm Downloads](https://img.shields.io/npm/dt/futurepay-form-integration-js.svg)](https://www.npmjs.com/package/futurepay-form-integration-js)
 [![Build status](https://github.com/jamesmcroft/futurepay-form-integration-for-js/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jamesmcroft/futurepay-form-integration-for-js/actions/workflows/ci.yml)
-[![Twitter Followers](https://img.shields.io/twitter/follow/jamesmcroft?label=follow%20%40jamesmcroft&style=flat)](https://twitter.com/jamesmcroft)
 
 The FuturePay (Worldpay) Form Integration Library for JavaScript is a library that allows you to integrate with FuturePay's hosted [Form Integration](http://support.worldpay.com/support/kb/bg/recurringpayments/rpfp.html) method for recurring payments with JavaScript applications.
 
